@@ -1,18 +1,28 @@
 {
-  "name": "create-react-app-prerender",
+  "name": "create-react-app-prerender-example",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "history": "^4.6.1",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-helmet": "^5.0.3",
+    "universal-router": "^3.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-react-app": "^2.2.0",
+    "cheerio": "^0.22.0",
+    "gh-pages": "^0.12.0",
     "react-scripts": "0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && NODE_ENV=production babel-node scripts/render.js",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "homepage": "https://yuheiy-sandbox.github.io/create-react-app-prerender-example"
 }
